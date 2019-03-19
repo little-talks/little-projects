@@ -1,0 +1,14 @@
+[
+{
+	"name":"zhangsan",
+	"sex":"man",
+	"address":"hangzhou",
+	"home":"http://www.zahngsan.com"
+},
+{
+	"name":"lisi",
+	"sex":"woman",
+	"address":"beijing",
+	"home":"http://www.lisi.com"
+}
+]
