@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text.html" charset="UTF-8">
+<title>填写表单</title>
+</head>
+
+<style>
+.input-text,#btns{
+	margin-left:88px;
+	}
+.reg-tits{
+	display:block;
+	width:88px;
+	float:left;
+	text-align:right;
+}
+#rs{
+	display:inline-block;
+}
+</style>
+</head>
+
+<body>
+<div id="content">
+<form action="getInfo.jsp" method="post">
+<div class="info">
+<span class="reg-tits">姓名：</span><input type="text" name="fname" class="input-text"></div>
+
+<div class="info">
+<span class="reg-tits">年龄：</span><input type="text" name="age" class="input-text"></div>
+
+<div class="info">
+<span class="reg-tits">性别：</span>
+<label for="smale"><input type="radio" name="gender" id="smale" class="input-text" value="男">男</label>
+<label for="sfemale"><input type="radio" name="gender" id="sfemale" class="input-text" value="女">女</label></div>
+
+<div id="rabs" class="info">
+<span class="reg-tits" id="rab">爱好：</span>
+<div id="rs">
+<label for="mtravel">
+<input type="checkbox" name="rabbits" id="mtravel" class="input-text" value="旅游">旅游
+</label><br>
+<label for="mclimb">
+<input type="checkbox" name="rabbits" id="mclimb" class="input-text" value="登山">登山
+</label><br>
+<label for="mex">
+<input type="checkbox" name="rabbits" id="mex" class="input-text" value="健身">健身
+</label><br>
+<label for="minternet">
+<input type="checkbox" name="rabbits" id="minternet" class="input-text" value="上网">上网
+</label><br>
+<label for="mswim">
+<input type="checkbox" name="rabbits" id="mswim" class="input-text" value="游泳">游泳
+</label></div>
+</div>
+
+<div class="info">
+<span class="reg-tits">学历：</span>
+<select class="input-text" name="grade">
+<option value="本科">本科</option>
+<option value="研究生">研究生</option>
+</select></div>
+<div id="cons" class="info" >
+<span class="reg-tits">自我介绍：</span>
+<textarea rows="7" cols="20" name="info" class="input-text" id="selfar"></textarea></div>
+<div id="btns">
+<input type="submit" value="提交">
+<input type="reset" value="重置">
+</div>
+</form>
+</div>
+</body>
+</html>
