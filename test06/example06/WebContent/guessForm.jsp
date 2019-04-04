@@ -16,24 +16,21 @@
 	int n = rand.nextInt(100)+1;
 	//获取session创建时间
 	Date createTime = new Date(session.getCreationTime());
-	long ct = createTime.getTime();
-	//获取最后访问页面的时间
-	Date lastAccessTime = new Date(session.getLastAccessedTime());
-	long lt = lastAccessTime.getTime();
-	Integer subTime =(int)(lt/1000-ct/1000);
-	Integer subTimeKey = new Integer(subTime);
+	Date now = new Date();
+	//long ct = createTime.getTime();
+	long ct = now.getTime();
+	int ict = (int) ct / 1000;
+	String createTimeKey = new String("ict");
 	Integer visitCount = new Integer(0);
 	String visitCountKey = new String("visitCount");
 	String numKey = new String("n");
 	//初始化
 	session.removeAttribute("visitCountKey");
-	//session.removeAttribute("subTimeKey");
 	session.setAttribute("visitCountKey", visitCount);
-	//session.setAttribute("subTimeKey", subTime);
+	session.setAttribute("createTimeKey", ict);
 	out.println("分配的随机数字："+n);
 	out.println("session创建时间:"+createTime);
-	out.println("session最后访问时间:"+lastAccessTime);
-	Date now = new Date();
+	//out.println("session最后访问时间:"+lastAccessTime);
 	out.println("现在时间:"+now);
 	//检测是否新的访问用户
 	/*
@@ -41,9 +38,6 @@
 		session.setAttribute("visitCountKey", visitCount);
 		out.println("新用户已猜的次数："+visitCount);
 	}
-	out.println("分配的随机数字："+n);
-	session.setAttribute("visitCountKey", visitCount);
-	
 	out.println(session.getId());
 	out.println(createTime);
 	out.println(lastAccessTime);
@@ -51,17 +45,10 @@
 	out.println("用时"+subTime);
 	out.println("数字："+n);
 	out.println("次数："+visitCount);
-	
-	//获取访问的用户数
-	visitCount = (Integer) session.getAttribute("visitCountKey");
-	visitCount = visitCount + 1;
-	out.println("不是新用户已猜的次数："+visitCount);
-	out.println("用时"+subTime); 
 	*/
 	visitCount = (Integer) session.getAttribute("visitCountKey");
 	//visitCount = visitCount + 1;
 	session.setAttribute("visitCountKey", visitCount);
-	session.setAttribute("subTimeKey", subTime);
 	session.setAttribute("numKey",n);
 	%>
 	</pre>

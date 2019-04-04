@@ -3,7 +3,8 @@
     <%
 	//次数、时长、所猜数字、随机数字
 	Integer vc = (Integer)session.getAttribute("visitCountKey");
-	Integer st = (Integer)session.getAttribute("subTimeKey");
+	//Integer st = (Integer)session.getAttribute("subTimeKey");
+	Integer ct = (Integer)session.getAttribute("createTimeKey");
 	String inum = request.getParameter("num");
 	Integer rn = (Integer)session.getAttribute("numKey");
 	%>
@@ -35,7 +36,7 @@
 	%>
 		<jsp:forward page="success.jsp">
 			<jsp:param value="" name="(Integer)session.getAttribute('visitCountKey')" />
-			<jsp:param value="" name="(Integer)session.getAttribute('subTimeKey')" />
+			<jsp:param value="" name="(Integer)session.getAttribute('createTimeKey')" />
 			<jsp:param value="" name="request.getParameter('num');" />
 
 		</jsp:forward>
@@ -48,7 +49,7 @@
 	%>
 	<jsp:forward page="large.jsp">
 		<jsp:param value="" name="(Integer)session.getAttribute('visitCountKey')" />
-		<jsp:param value="" name="(Integer)session.getAttribute('subTimeKey')" />
+		<jsp:param value="" name="(Integer)session.getAttribute('createTimeKey')" />
 		<jsp:param value="" name="request.getParameter('num');" />
 	</jsp:forward>
 	<% 
@@ -60,7 +61,7 @@
 	%>
 	<jsp:forward page="small.jsp">
 		<jsp:param value="" name="(Integer)session.getAttribute('visitCountKey')" />
-		<jsp:param value="" name="(Integer)session.getAttribute('subTimeKey')" />
+		<jsp:param value="" name="(Integer)session.getAttribute('createTimeKey')" />
 		<jsp:param value="" name="request.getParameter('num');" />
 	</jsp:forward>
 	<% 
